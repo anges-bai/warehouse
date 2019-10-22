@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js自定义对象</title>
+		<script>
+			/**
+			 * js自定义对象：4中方式
+			 * 1.类似java中的有参构造
+			 * 2.            无参构造
+			 * 
+			 * 定义对象
+			 *     function  对象（属性）{  //this：代表当前对象的地址值的引用
+			 * 	    追究属性
+			 *     this.age=age;
+			 *     追究方法
+			 * }
+			 * 创建对象
+			 * var 对象名 = new 对象（属性的实际值）；
+			 * */
+			function Person(name,age){
+				this.name=name;
+				this.age=age;
+				//追究方法
+				this.say = function(){
+					alert("调用会说话的功能...");
+				}
+			}
+			//创建对象
+			var p = new Person("hello",17);
+			document.write(p.name+"<br/>");
+			document.write(p.age+"<br/>");
+			
+			/**
+			 * 方式2：无参
+			function Student(){
+				
+			}
+			var a =new Student();
+			a.name=xiaoxiao;
+			a.age=11;
+			a.say=function(){
+				alert("hhhhhh");
+			}
+			document.write(a.name+"<br/>");
+			document.write(a.age+"<br/>");
+			document.say();
+			*/
+			
+			//方式3：利用js中的模板对象：Object
+			//创建对象
+			var b = new Object();
+			//追加属性
+			b.name="rose";
+			b.age=19;
+			//追加方法
+			b.say=function(){
+				alert("调用会说话的功能...");
+			}
+			
+			//方式4；字面量值的方式（其实json）
+			/**
+			 * "key":value(value是可以类型)
+			 * "title":{
+			 * 	           "title":"xxxx"
+			 *         },
+			 *       {
+			 * 	"title2":"xxx"
+			 *     }
+			 * */
+			//json解析要比xml解析效率高
+			var p ={
+				"name":"jason",
+				"age":19,
+				"say":function(){
+					alert("调用了....");
+				}
+			}
+		</script>>
+	</head>
+	<body>
+	</body>
+</html>
